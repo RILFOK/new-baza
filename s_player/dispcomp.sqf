@@ -1,0 +1,1 @@
+[bk, "<t color='#ff0000'>Запросить ящик с БК</t>", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", "_this distance _target < 20", "_caller distance _target < 20", {}, {}, {hint "Ящик с БК доставлен!"; [_this] remoteExec ["srv_fnc_bk",2]}, {}, [], 3, 0, true, false] call BIS_fnc_holdActionAdd;

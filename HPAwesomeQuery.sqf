@@ -1,0 +1,10 @@
+"Extdb3" callExtension "9:RESET";
+HPAwesomeQuery = [];
+Freq = 10;
+PROTOCOL = ceil random 9999;
+OurDataBase = "utfdatabase";
+sleep 5;
+diag_log "Initializing";
+"Extdb3" callExtension "9:ADD_DATABASE:utfdatabase";
+"Extdb3" callExtension format ["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2:TEXT",OurDataBase,PROTOCOL];
+missionNamespace setVariable ["UTF_DBCONNECTED",true,true];

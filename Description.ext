@@ -1,0 +1,348 @@
+﻿OnLoadName = "UTF server";
+onLoadMission = "4.4.0.Stable";
+author = "Коллективный разум(с)";
+respawn = "BASE";
+respawnDelay = 3;
+disabledAI = 1; 
+enableDebugConsole = 1;
+loadScreen = "pics\utflogo.paa";
+joinUnassigned = true; // auto assign
+disableChannels[] = {{0, false, true},{2, true, true},{5,false,false}};
+
+class CfgUnitInsignia
+{
+    class UTFShevron
+    {
+        texture = "pics\utflogo.paa"; 
+        material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";
+    };
+};
+
+class Header
+{
+  gameType="COOP";
+  minPlayers=1;
+  maxPlayers=70;
+};
+class Params
+{
+	class PointSelectionMethod 
+	{
+	    title="$STR_CONF_PARAM_38";
+	    values[] = {0,1};
+        texts[]={"$STR_CONF_PARAM_38_0","$STR_CONF_PARAM_38_1"};
+		default=0;
+	};
+   
+    class RepairKits
+	{		
+		title="$STR_CONF_PARAM_2";
+		values[]={1,2,3};
+		texts[]={"1","2","3"};
+		default=1;
+	};
+    
+	class HaloJump
+	{		
+		title="$STR_CONF_PARAM_4";
+		values[]={0,1,2,3,4,5,6};
+		texts[]={"$STR_CONF_PARAM_4a","$STR_CONF_PARAM_4b","$STR_CONF_PARAM_4c","$STR_CONF_PARAM_4d","$STR_CONF_PARAM_4e","$STR_CONF_PARAM_4f","$STR_CONF_PARAM_4g"};
+		default=0;
+	};
+	
+    class GroupRecon
+	{		
+		title="$STR_CONF_PARAM_28";
+		values[]={0,1};
+		texts[]={"$STR_CONF_PARAM_28_0","$STR_CONF_PARAM_28_1"};
+		default=1;
+	};	
+    class setskillnach
+	{
+		title = "$STR_CONF_PARAM_SETSKILLNACH";
+		values[] = {-99999};
+		default = -99999;
+		texts[] = {""};
+	};	
+    class aimingspeedvalue 
+	{
+		title = "$STR_CONF_PARAM_aimingspeed";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 15;
+	};
+    class aimingaccuracyvalue 
+	{
+		title = "$STR_CONF_PARAM_aimingaccuracy";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 9;
+	};
+    class aimingshakevalue 
+	{
+		title = "$STR_CONF_PARAM_aimingshake";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 17;
+	};
+    class spotdistancevalue 
+	{
+		title = "$STR_CONF_PARAM_spotdistance";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 15;
+	};
+    class spottimevalue 
+	{
+		title = "$STR_CONF_PARAM_spottime";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 17;
+	};
+    class commandingvalue 
+	{
+		title = "$STR_CONF_PARAM_commanding";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 19;
+	};
+    class couragevalue 
+	{
+		title = "$STR_CONF_PARAM_courage";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 17;
+	};
+    class reloadSpeedvalue 
+	{
+		title = "$STR_CONF_PARAM_reloadSpeed";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 17;
+	};
+    class generalvalue 
+	{
+		title = "$STR_CONF_PARAM_general";
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+		texts[] = {"0.1","0.15","0.2","0.25","0.3","0.35","0.4","0.45","0.5","0.55","0.6","0.65","0.7","0.75","0.8","0.85","0.9","0.95","1"};
+		default = 19;
+	};
+    class setskillend
+	{
+		title = "$STR_CONF_PARAM_SETSKILLЕND";
+		values[] = {-99999};
+		default = -99999;
+		texts[] = {""};
+	};
+	
+  	class AirPatrol
+	{
+		title = "$STR_CONF_PARAM_12";
+		values[] = {1,2,3,4};
+		texts[] = {"$STR_CONF_PARAM_12a","$STR_CONF_PARAM_12b","$STR_CONF_PARAM_12c","$STR_CONF_PARAM_12d"};
+		default = 4;
+	};	
+
+    
+	class Rezhim
+	{
+		title = "$STR_CONF_PARAM_13";
+		values[] = {1,2,3};
+		texts[] = {"$STR_CONF_PARAM_13a","$STR_CONF_PARAM_13b","$STR_CONF_PARAM_13c"};
+		default = 3;
+	};
+	
+	class MiningBash
+	{
+	    title = "$STR_CONF_PARAM_37";
+	    values[] = {0,1};
+		texts[] = {"$STR_CONF_PARAM_37_0","$STR_CONF_PARAM_37_1"};		
+		default = 1;
+    };	
+	
+	class HardReinfor
+	{
+	    title = "$STR_CONF_PARAM_18";
+	    values[] = {0,1};
+		texts[] = {"$STR_CONF_PARAM_18_0","$STR_CONF_PARAM_18_1"};		
+		default = 0;
+    };
+      
+	class System
+	{
+		title = "$STR_CONF_PARAM_14";
+		values[] = {1,2,3};
+		texts[] = {"$STR_CONF_PARAM_14a","$STR_CONF_PARAM_14b","$STR_CONF_PARAM_14c"};
+		default = 3;
+	};
+    
+	class AccessSpawner
+	{		
+		title="$STR_CONF_PARAM_15";
+		values[]={0,1,2,3,4/*,5*/};
+		texts[]={"$STR_CONF_PARAM_15a", "$STR_CONF_PARAM_15b","$STR_CONF_PARAM_15c","$STR_CONF_PARAM_15d","$STR_CONF_PARAM_15e"/*,"$STR_CONF_PARAM_15f"*/};
+		default=0;
+	}; 	
+
+	
+    class Fatigue
+    {
+		title = "$STR_CONF_PARAM_27";
+		values[]={0,1};
+		texts[] = {"$STR_CONF_PARAM_27_0","$STR_CONF_PARAM_27_1"};
+		default = 0;
+    };
+	
+    class thermalImager
+    {
+        title = "$STR_CONF_PARAM_29";
+		values[]={0,1};
+		texts[] = {"$STR_CONF_PARAM_29_0","$STR_CONF_PARAM_29_1"};
+		default = 0;
+    };   
+	class srv_movingBox
+    {
+        title = "$STR_CONF_PARAM_33";
+		values[]={0,1};
+		texts[] = {"$STR_CONF_PARAM_33_0","$STR_CONF_PARAM_33_1"};
+		default = 0;
+    };	
+	
+	class srv_CountKillBots
+    {
+        title = "$STR_CONF_PARAM_35";
+		values[]={0,1,2,3,4,5,6};
+		texts[] = {"$STR_CONF_PARAM_35_0","$STR_CONF_PARAM_35_1","$STR_CONF_PARAM_35_2","$STR_CONF_PARAM_35_3","$STR_CONF_PARAM_35_4","$STR_CONF_PARAM_35_5","$STR_CONF_PARAM_35_6"};
+		default = 0;
+    };	
+ 	class MoveBasePoint
+    {
+        title = "$STR_CONF_PARAM_39";
+		values[]={0,1};
+        texts[] = {"$STR_CONF_PARAM_39_0","$STR_CONF_PARAM_39_1"};
+		default = 0;
+    };   	
+    class srv_database
+    {
+        title = "$STR_CONF_PARAM_32";
+		values[]={1,2,3};
+		texts[] = {"$STR_CONF_PARAM_32_1","$STR_CONF_PARAM_32_2","$STR_CONF_PARAM_32_3"};
+		default = 3;
+    };
+    	
+    class Empty7
+	{
+		title = "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+		values[] = {-99999};
+		default = -99999;
+		texts[] = {""};
+	};	
+};
+
+#include "client\hpp\Resources.hpp" 
+#include "taw_vd\GUI.h"
+#include "taw_vd\defines.h"
+#include "s_player\BT_func\adminka\define.hpp"
+#include "s_player\BT_func\adminka\adminka.hpp"
+#include "s_player\BT_func\adminka\main_menu.hpp"
+#include "s_player\BT_func\adminka\specmission.hpp"
+#include "s_player\BT_func\adminka\kickpanel.hpp"
+#include "s_player\outlw_magRepack\MagRepack_config.hpp"
+
+#include "BT_GUI\circleMenu\circleMenu.hpp"
+#include "BT_GUI\adminMenu\adminMenu.hpp"
+#include "BT_GUI\aviaMenu\aviaMenu.hpp"
+#include "BT_GUI\tankMenu\tankMenu.hpp"
+#include "BT_GUI\greenMenu\greenMenu.hpp"
+#include "BT_GUI\levelMenu\levelMenu.hpp"
+#include "BT_GUI\kickMenu\kickMenu.hpp"
+#include "BT_GUI\animMenu\animMenu.hpp"
+#include "BT_GUI\kmbMenu\kmbMenu.hpp"
+#include "BT_GUI\medalMenu\medalMenu.hpp"
+#include "BT_GUI\medalPlayer\medalPlayer.hpp"
+
+class RscTitles
+{
+  #include "FPS\dialog\fps1.hpp"
+  #include "s_player\BT_func\adminka\dialog_level_up.hpp"
+  #include "BT_GUI\progressBar\progressBar.hpp"
+};
+
+
+class CfgFunctions
+{
+  //#include "Resources\taw_vd\CfgFunctions.hpp"
+  #include "Functions.hpp"
+  #include "taw_vd\CfgFunctions.hpp"
+  #include "TB\cfgfunctions.hpp"
+};
+
+class CfgRemoteExec 
+{
+	// Перечень функций которые можно будет использовать через remoteExec
+	class Functions 
+	{
+		// Состояния remoteExec: 0-выключен, 1-включен, принимая во внимание белый список, 2-включен, однако, игнорируя белые списки (по умолчанию из-за обратной совместимости)
+		mode = 2;
+		// Возможность отправлять сообщения джип: 0-отключено, 1-включено (по умолчанию)
+		jip = 0;
+		//ваши функции здесь
+		//class YourFunction1 {
+			  //allowedTargets=0; //может кого-либо (по умолчанию)
+			  //jip = 0; // sending jip messages is disabled for this function (overrides settings in the Functions class)
+		//};
+		//class YourFunction2 { allowedTargets=1; }; // can target only clients
+		//class YourFunction3 { allowedTargets=2; }; // can target only the server
+		class srv_fnc_actPlayerArta {allowedTargets = 1;}; 
+		class srv_fnc_missionfps {allowedTargets = 1;};
+		class srv_fnc_NewTask {allowedTargets = 1;};
+		class srv_fnc_TaskDone {allowedTargets = 1;};
+		class srv_fnc_TaskDone1 {allowedTargets = 1;};
+		class srv_fnc_TaskDone2 {allowedTargets = 1;};
+		class srv_fnc_TaskDone3 {allowedTargets = 1;};
+		class srv_fnc_TaskDoneG1 {allowedTargets = 1;};
+		class srv_fnc_TaskNotDoneG1 {allowedTargets = 1;};
+		//----------------------------------------------		
+        class srv_fnc_createvehvpp {allowedTargets = 2;};
+        class srv_fnc_getOutPlayer {allowedTargets = 1;};
+        //---------------------клиент захват башни (PvP)-----------
+        class srv_fnc_zahvatBashPvPPrBr {allowedTargets = 1;};  
+        //---------------------сервер захват башни (PvP)-----------
+        class srv_fnc_zahvatBashPvP {allowedTargets = 2;}; 	
+        //---------------------удаление убитой техники------------------------
+        class srv_fnc_DeleteWreckVehicle {allowedTargets = 2;};
+		//-----------------------подкреп-------------------------
+        class srv_fnc_Paras {allowedTargets = 2;};
+		class srv_fnc_Parasgosta {allowedTargets = 2;};
+		class srv_fnc_ReinforVehicle {allowedTargets = 2;};
+		class srv_fnc_ReinforcePatrol {allowedTargets = 2;};
+        class srv_fnc_desant1 {allowedTargets = 2;};
+		class srv_fnc_desantgosta1 {allowedTargets = 2;};
+		class srv_fnc_desant3 {allowedTargets = 2;};
+		class srv_fnc_vputbnapoint {allowedTargets = 2;};
+        class srv_fnc_Spr_cobra {allowedTargets = 2;};
+		class srv_fnc_addactionDownBox {allowedTargets = 1;};
+		//----------------------десантирование игроков-----------
+        class srv_fnc_deletebasevert {allowedTargets = 2;};
+        class srv_fnc_wpvert {allowedTargets = 2;};
+        class srv_fnc_natochke {allowedTargets = 1;};	
+        class srv_fnc_DeleteAttachedObjCargo {allowedTargets = 2;};
+        class srv_fnc_grouppara {allowedTargets = 1;};
+        class srv_fnc_playerparabse {allowedTargets = 1;};
+		class srv_fnc_stopspeed {allowedTargets = 2;};
+		//создание точки
+		class srv_fnc_createPoint {allowedTargets = 2;};
+		//статистика
+		//сколько погиб игрок
+		class srv_fnc_deadplayerstata {allowedTargets = 2;};
+		//сколько погобло врагов
+		class srv_fnc_enemydeadstata  {allowedTargets = 2;};
+		//опции флага
+		class srv_fnc_addactionflag {allowedTargets = 1;};
+        class TB_fnc_attachMP {allowedTargets = 2;};
+		class delgr {allowedTargets = 0; jip = 1};
+	};					
+};
+
+//#include "MUH\dialogs\defines.hpp"
+#include "MUH\dialogs\muh_dialogs.hpp"
